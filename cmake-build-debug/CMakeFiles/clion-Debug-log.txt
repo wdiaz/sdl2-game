@@ -1,0 +1,34 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Volumes/Workplace/projects/sdl2/projects/shooter -B /Volumes/Workplace/projects/sdl2/projects/shooter/cmake-build-debug
+
+-- CMAKE_BINARY_DIR: /Volumes/Workplace/projects/sdl2/projects/shooter/cmake-build-debug
+-- CMAKE_SOURCE_DIR: /Volumes/Workplace/projects/sdl2/projects/shooter
+-- CMAKE_COMMAND: /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+-- CMAKE_VERSION: 3.24.2
+-- CMAKE_C_COMPILER: /Library/Developer/CommandLineTools/usr/bin/cc
+-- CMAKE_PROJECT_NAME: shooter
+-- CMAKE_FINDCMAKE: /Volumes/Workplace/projects/sdl2/projects/shooter/CMAKE
+
+-- SOURCE entry point : src/main.csrc/main.hsrc/main.csrc/common.hsrc/defs.hsrc/draw.hsrc/draw.csrc/structs.hsrc/init.hsrc/init.csrc/input.hsrc/input.c
+
+
+-- FINDING SDL2
+-- SDL2_FOUND: TRUE
+-- SDL2_INCLUDE_DIR:/usr/local/include/SDL2
+-- SDL2_LIBRARY: /usr/local/lib/libSDL2main.a/usr/local/lib/libSDL2.dylib-framework Cocoa
+
+-- FINDING SDL2_IMAGE
+-- SDL2_IMAGE_FOUND: TRUE
+-- SDL2_IMAGE_INCLUDE_DIR: /usr/local/include/SDL2
+-- SDL2_IMAGE_LIBRARY: /usr/local/lib/libSDL2_image.dylib
+
+-- FINDING SDL2TTF
+-- SDL2TTF_FOUND: TRUE
+-- SDL2TTF_INCLUDE_DIR: /usr/local/include/SDL2
+-- SDL2TTF_LIBRARY: /usr/local/lib/libSDL2_ttf.dylib/usr/local/lib/libSDL2_ttf.dylib-framework Cocoa
+
+-- FINDING SDL2Mixer
+-- SDL2Mixer_FOUND: TRUE
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Volumes/Workplace/projects/sdl2/projects/shooter/cmake-build-debug
