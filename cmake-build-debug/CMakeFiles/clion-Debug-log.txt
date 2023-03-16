@@ -8,7 +8,7 @@
 -- CMAKE_PROJECT_NAME: shooter
 -- CMAKE_FINDCMAKE: /Volumes/Workplace/projects/sdl2/projects/shooter/CMAKE
 
--- SOURCE entry point : src/main.csrc/main.hsrc/main.csrc/common.hsrc/defs.hsrc/draw.hsrc/draw.csrc/structs.hsrc/init.hsrc/init.csrc/input.hsrc/input.c
+-- SOURCE entry point : src/main.csrc/main.hsrc/main.csrc/common.hsrc/defs.hsrc/draw.hsrc/draw.csrc/structs.hsrc/init.hsrc/init.csrc/input.hsrc/input.csrc/stage.hsrc/stage.c
 
 
 -- FINDING SDL2

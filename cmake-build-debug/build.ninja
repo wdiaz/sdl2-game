@@ -74,6 +74,13 @@ build CMakeFiles/shooter.dir/src/input.c.o: C_COMPILER__shooter_Debug /Volumes/W
   OBJECT_DIR = CMakeFiles/shooter.dir
   OBJECT_FILE_DIR = CMakeFiles/shooter.dir/src
 
+build CMakeFiles/shooter.dir/src/stage.c.o: C_COMPILER__shooter_Debug /Volumes/Workplace/projects/sdl2/projects/shooter/src/stage.c || cmake_object_order_depends_target_shooter
+  DEP_FILE = CMakeFiles/shooter.dir/src/stage.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -fcolor-diagnostics -std=gnu11
+  INCLUDES = -I/usr/local/include/SDL2
+  OBJECT_DIR = CMakeFiles/shooter.dir
+  OBJECT_FILE_DIR = CMakeFiles/shooter.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target shooter
@@ -82,7 +89,7 @@ build CMakeFiles/shooter.dir/src/input.c.o: C_COMPILER__shooter_Debug /Volumes/W
 #############################################
 # Link the executable bin/shooter
 
-build bin/shooter: C_EXECUTABLE_LINKER__shooter_Debug CMakeFiles/shooter.dir/src/main.c.o CMakeFiles/shooter.dir/src/draw.c.o CMakeFiles/shooter.dir/src/init.c.o CMakeFiles/shooter.dir/src/input.c.o | /usr/local/lib/libSDL2main.a /usr/local/lib/libSDL2.dylib /usr/local/lib/libSDL2_ttf.dylib /usr/local/lib/libSDL2_ttf.dylib /usr/local/lib/libSDL2_image.dylib /usr/local/lib/libSDL2_mixer.dylib
+build bin/shooter: C_EXECUTABLE_LINKER__shooter_Debug CMakeFiles/shooter.dir/src/main.c.o CMakeFiles/shooter.dir/src/draw.c.o CMakeFiles/shooter.dir/src/init.c.o CMakeFiles/shooter.dir/src/input.c.o CMakeFiles/shooter.dir/src/stage.c.o | /usr/local/lib/libSDL2main.a /usr/local/lib/libSDL2.dylib /usr/local/lib/libSDL2_ttf.dylib /usr/local/lib/libSDL2_ttf.dylib /usr/local/lib/libSDL2_image.dylib /usr/local/lib/libSDL2_mixer.dylib
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
   LINK_LIBRARIES = /usr/local/lib/libSDL2main.a  /usr/local/lib/libSDL2.dylib  -framework Cocoa  /usr/local/lib/libSDL2_ttf.dylib  /usr/local/lib/libSDL2_ttf.dylib  -framework Cocoa  /usr/local/lib/libSDL2_image.dylib  /usr/local/lib/libSDL2_mixer.dylib
   OBJECT_DIR = CMakeFiles/shooter.dir

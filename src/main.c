@@ -4,83 +4,68 @@
 #include "init.h"
 #include "input.h"
 #include "main.h"
+#include "stage.h"
 
-App    app;
-Entity player;
-Entity bullet;
+App   app;
+Stage stage;
+
+static void capFrameRate(long *then, float *remainder);
 
 int main(int argc, char *argv[])
 {
-	memset(&app, 0, sizeof(App));
-	memset(&player, 0, sizeof(Entity));
-    memset(&bullet, 0, sizeof (Entity));
+    long  then;
+    float remainder;
 
-	initSDL();
+    memset(&app, 0, sizeof(App));
 
-	atexit(cleanup);
+    initSDL();
 
-	player.texture = loadTexture("resources/player.png");
-	player.x = 100;
-	player.y = 100;
+    atexit(cleanup);
 
-    bullet.texture = loadTexture("resources/playerBullet.png");
+    initStage();
 
-	while (1)
-	{
-		prepareScene();
+    then = SDL_GetTicks();
 
-		doInput();
+    remainder = 0;
 
-        player.x += player.dx;
-        player.y += player.dy;
+    while (1)
+    {
+        prepareScene();
 
-		if (app.up)
-		{
-			player.y -= 4;
-		}
+        doInput();
 
-		if (app.down)
-		{
-			player.y += 4;
-		}
+        app.delegate.logic();
 
-		if (app.left)
-		{
-			player.x -= 4;
-		}
+        app.delegate.draw();
 
-		if (app.right)
-		{
-			player.x += 4;
-		}
+        presentScene();
 
-        if(app.fire && bullet.health == 0)
-        {
-            bullet.x = player.x;
-            bullet.y = player.y;
-            bullet.dx = 16;
-            bullet.dy = 0;
-            bullet.health = 1;
-        }
+        capFrameRate(&then, &remainder);
+    }
 
-        bullet.x += bullet.dx;
-        bullet.y += bullet.dy;
+    return 0;
+}
 
-        if (bullet.x > SCREEN_WIDTH)
-        {
-            bullet.health = 0;
-        }
+static void capFrameRate(long *then, float *remainder)
+{
+    long wait, frameTime;
 
-		blit(player.texture, player.x, player.y);
+    wait = 16 + *remainder;
 
-        if (bullet.health > 0) {
-            blit(bullet.texture, bullet.x, bullet.y);
-        }
+    *remainder -= (int)*remainder;
 
-		presentScene();
+    frameTime = SDL_GetTicks() - *then;
 
-		SDL_Delay(16);
-	}
+    wait -= frameTime;
 
-	return 0;
+    if (wait < 1)
+    {
+        wait = 1;
+    }
+
+    SDL_Delay(wait);
+
+    *remainder += 0.667;
+
+    *then = SDL_GetTicks();
 }

@@ -16,7 +16,7 @@ project(shooter)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMAKE")
-set(SOURCE_FILES    src/main.c src/main.h src/main.c src/common.h src/defs.h src/draw.h src/draw.c src/structs.h src/init.h src/init.c src/input.h src/input.c)
+set(SOURCE_FILES    src/main.c src/main.h src/main.c src/common.h src/defs.h src/draw.h src/draw.c src/structs.h src/init.h src/init.c src/input.h src/input.c src/stage.h src/stage.c)
 
 Message("")
 Message( STATUS "SOURCE entry point : " ${SOURCE_FILES} )
