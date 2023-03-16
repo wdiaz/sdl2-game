@@ -21,7 +21,8 @@ void initSDL(void)
 	}
 
 	app.window = SDL_CreateWindow("Shooter Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, windowFlags);
-
+    SDL_Surface *icon = IMG_Load("resources/appicon.jpg");
+    SDL_SetWindowIcon(app.window, icon);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
 
 	app.renderer = SDL_CreateRenderer(app.window, -1, rendererFlags);
