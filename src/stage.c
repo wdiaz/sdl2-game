@@ -96,7 +96,7 @@ static void doPlayer(void)
         player->dx = PLAYER_SPEED;
     }
 
-    if (app.keyboard[SDL_SCANCODE_LCTRL] && player->reload == 0)
+    if (app.keyboard[SDL_SCANCODE_Z] && player->reload == 0)
     {
         fireBullet();
     }
