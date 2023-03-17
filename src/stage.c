@@ -126,6 +126,26 @@ static void fireBullet(void)
 
 static void doFighters() {
     Entity *e, *prev;
+
+    prev = &stage.fighterHead;
+
+    for (e = stage.fighterHead.next ; e != NULL ; e = e->next)
+    {
+        e->x += e->dx;
+        e->y += e->dy;
+
+        if ( e != player && e->x < -e->w)
+        {
+            if ( e == stage.fighterTail)
+            {
+                stage.bulletTail = prev;
+            }
+            prev->next = e->next;
+            free(e);
+            e = prev;
+        }
+        prev = e;
+    }
 }
 
 static void doBullets(void)
