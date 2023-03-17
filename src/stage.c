@@ -14,9 +14,14 @@ static void doPlayer(void);
 static void doBullets(void);
 static void drawPlayer(void);
 static void drawBullets(void);
+static void spawnEnemies(void);
+
+static void doFighters();
 
 static Entity      *player;
 static SDL_Texture *bulletTexture;
+static SDL_Texture *enemyTexture;
+static int          enemySpawnTimer;
 
 void initStage(void)
 {
@@ -30,6 +35,10 @@ void initStage(void)
     initPlayer();
 
     bulletTexture = loadTexture("resources/playerBullet.png");
+
+    enemyTexture = loadTexture("resources/enemy.png");
+
+    enemySpawnTimer = 0;
 }
 
 static void initPlayer()
@@ -49,7 +58,11 @@ static void logic(void)
 {
     doPlayer();
 
+    doFighters();
+
     doBullets();
+
+    spawnEnemies();
 }
 
 static void doPlayer(void)
@@ -111,6 +124,10 @@ static void fireBullet(void)
     player->reload = 8;
 }
 
+static void doFighters() {
+    Entity *e, *prev;
+}
+
 static void doBullets(void)
 {
     Entity *b, *prev;
@@ -158,4 +175,9 @@ static void drawBullets(void)
     {
         blit(b->texture, b->x, b->y);
     }
+}
+
+static void spawnEnemies(void)
+{
+
 }
