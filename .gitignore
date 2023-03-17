@@ -7,7 +7,7 @@ cmake-build-debug
 *.ko
 *.obj
 *.elf
-
+.DS_Store
 # Linker output
 *.ilk
 *.map
